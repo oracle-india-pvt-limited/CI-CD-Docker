@@ -2,6 +2,7 @@ def CONTAINER_NAME="cicd-pipeline"
 def CONTAINER_TAG="latest"
 def DOCKER_HUB_USER="sudheshpn"
 def HTTP_PORT="8020"
+def buildNumber = env.BUILD_NUMBER
 
 node {
 
@@ -53,7 +54,7 @@ def imagePrune(containerName){
     } catch(error){}
 }
 
-def imageBuild(containerName, BUILD_NUMBER){
+def imageBuild(containerName, buildNumber){
     sh "docker build -t $containerName:${env.BUILD_NUMBER}")  -t $containerName --pull --no-cache ."
     echo "Image build complete"
 }
