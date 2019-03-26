@@ -55,7 +55,7 @@ def imagePrune(containerName){
 }
 
 def imageBuild(containerName, buildNumber){
-    sh "docker build -t $containerName:$env.BUILD_NUMBER  -t $containerName --pull --no-cache ."
+    sh "docker build -t $containerName:$env.BUILD_NUMBER --pull --no-cache ."
     echo "Image build complete"
 }
 
