@@ -1,7 +1,7 @@
-def CONTAINER_NAME="jenkins-pipeline"
+def CONTAINER_NAME="cicd-pipeline"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="vineet0164"
-def HTTP_PORT="8090"
+def DOCKER_HUB_USER="sudheshpn"
+def HTTP_PORT="8020"
 
 node {
 
