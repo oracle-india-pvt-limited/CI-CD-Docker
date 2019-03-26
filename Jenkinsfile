@@ -53,7 +53,7 @@ def imagePrune(containerName){
     } catch(error){}
 }
 
-def imageBuild(containerName, tag){
+def imageBuild(containerName, BUILD_NUMBER){
     sh "docker build -t $containerName:${env.BUILD_NUMBER}")  -t $containerName --pull --no-cache ."
     echo "Image build complete"
 }
