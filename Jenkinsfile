@@ -8,7 +8,6 @@ node {
     stage('Initialize'){
         def dockerHome = tool 'myDocker'
         def mavenHome  = tool 'myMaven'
-        def build.environment.get("BUILD_NUMBER")
     }
 
     stage('Checkout') {
