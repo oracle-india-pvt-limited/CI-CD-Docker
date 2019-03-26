@@ -62,6 +62,7 @@ def imageBuild(containerName, buildNumber){
 
 def pushToImage(containerName, buildNumber, dockerUser, dockerPassword){
     sh "docker login -u $dockerUser -p $dockerPassword"
+    sh "docker tag $containerName:$env.BUILD_NUMBER $dockerUser/$containerName:$env.BUILD_NUMBER"
     sh "docker push $dockerUser/$containerName:${env.BUILD_NUMBER}"
     echo "Image push complete"
 }
