@@ -32,7 +32,7 @@ node {
     }
 
     stage('Image Build'){
-        imageBuild(CONTAINER_NAME, CONTAINER_TAG)
+        imageBuild(CONTAINER_NAME, buildNumber)
     }
 
     stage('Push to Docker Registry'){
